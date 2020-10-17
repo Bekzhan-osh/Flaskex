@@ -19,7 +19,7 @@
   - name: Run app
     args:
       chdir: /tmp/Flaskex
-    shell: python3 app.py 
+    shell: 'nohup python3 app.py &' 
   
    
   
