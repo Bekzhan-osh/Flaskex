@@ -6,27 +6,20 @@
   - name: install git
     yum:
       name: 
-      - git
-      - python-pip
-  
-  - name: upgrade pip
-    shell: pip install --upgrade pip
-    
-    
+      - git 
   
   - name: Git clone
     shell: 'cd /tmp && git clone https://github.com/anfederico/Flaskex'
     args:
-      creates: Flaskex 
+      creates: /tmp/Flaskex 
   
   - name: install requirements
-    shell: 'cd /tmp/Flaskex && pip install -r requirements.txt'
-    
-   
+    shell: 'cd /tmp/Flaskex && pip3 install -r requirements.txt'
+     
   - name: Run app
     args:
       chdir: /tmp/Flaskex
-    shell: python app.py 
+    shell: python3 app.py 
   
    
   
